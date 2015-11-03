@@ -1,0 +1,18 @@
+section.portfolio
+	h2#portfolio.inline-border Portfolio
+	
+	mixin portfolio(link,img, alt,title,description)
+		a.portfolio-link(href="#{link}")
+			figure
+				img(src="#{img}", alt="#{alt}")
+				figcaption.portfolio-description
+					h4 #{title}
+					span.line-white
+					p #{description}
+					
+	
+	.portfolio-items
+		+portfolio("#", "images/portfolio/img1.jpg", "Sports Center website", "Sports Center", "Etiam vehicula massa ante, sed maximus nisi aliquam eu.")
+		+portfolio("#", "images/portfolio/img2.jpg", "Travel Agency website", "Travel Agency", "Etiam vehicula massa ante, sed maximus nisi aliquam eu.")
+		+portfolio("#", "images/portfolio/img3.jpg", "Designer Portfolio website", "Design Agency", "Etiam vehicula massa ante, sed maximus nisi aliquam eu.")
+		+portfolio("#", "images/portfolio/img4.jpg", "Car rental", "Rental Cars", "Etiam vehicula massa ante, sed maximus nisi aliquam eu.")

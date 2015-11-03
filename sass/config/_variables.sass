@@ -1,0 +1,175 @@
+//VARIABLES
+
+$font: 'open_sansregular', sans-serif
+$header-font: 'slim_joeregular', serif
+
+$scale: 1.5
+$guide: 900px
+
+//COLORES
+
+$black: #09120f
+$dark-blue: #444444
+$bright-yellow: #e2dc44
+$light-bg: #ffffff
+
+
+//ESTILOS COMUNES
+
+
+body,html
+	font-family: $font
+	font-size: 100%			/*EQUIVALE A 16px en la mayoria de navegadores*/
+	line-height: 1		/*EQUIVALE A 100% en la mayoria de navegadores*/
+	text-size-adjust: 100%
+	-moz-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%
+	-ms-text-size-adjust: 100%
+	margin: 0
+	padding: 0
+
+
+p
+	font-family: $font
+	font-size: 1.2em				/*18px/16px= 1.125em;*/
+	line-height: 1.4			/*22px/16px= 1.375*/
+
+h1
+	font-family: $header-font
+	font-size: 3.375em
+	line-height: 1.3333
+	
+
+h2
+	font-family: $header-font
+	font-size: 2.25em
+	line-height: 1.3333
+	max-width: 900px
+	text-align: center
+	margin: 150px auto 25px
+	color: $dark-blue
+
+.inline-border
+	position: relative
+
+	&:before
+		content: ""
+		display: block
+		width: 25%
+		height: 1px
+		background: $dark-blue
+		position: absolute
+		top: 50%
+		left: 0
+
+	&:after
+		content: ""
+		display: block
+		width: 25%
+		height: 1px
+		background: $dark-blue
+		position: absolute
+		top: 50%
+		right: 0
+
+h3
+	font-family: $header-font
+	font-size: 1.6875em
+	line-height: 1.07
+	text-align: center
+	margin: 0 auto
+
+h4
+	font-size: 1.125em
+	font-family: $header-font
+	line-height: 1.3333
+
+
+img
+	text-align: center
+	max-width: 100%
+	width: auto
+	height: auto
+
+a
+	display: inline-block
+	width: 100%
+	height: auto
+	text-decoration: none
+
+ul
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+strong,span
+	color: $bright-yellow
+
+/* EN NUESTRO CASO
+
+	PUNTO DE PARTIDA: 
+
+	p{
+		font-size: 1.125em;    17px/16px base= 1.063em  
+		line-height: 1.375;	  20px/16px base= 1.25  
+	}
+	h1{
+		font-size: 3.375em;    3 veces el tamaño de los parrafos (3x1.125)  
+		line-height: 1.375;     Mismo Line-Height 
+	}
+	h2{
+		font-size: 2.25em;    2 veces el tamaño de los parrafos (2x1.125)  
+		line-height: 1.375;     Mismo Line-Height  
+	}
+	
+	Para sacar los valores correctos y calcular el resto de elementos que no tienen un estandar (h3,h4..)
+	Calculamos la escala (scale) de la siguiente forma; p font x p line = 1.125x1.375= 1.546875
+	Redondeamos hacia abajo 1.546875 = 1.5 (Este valor es la escala)
+
+	Scale = 1.5
+	3/4 Scale = 1.125
+	1/2 Scale = 0.75		Con estos valores se hacen nuevos calculos
+	1/4 Scale = 0.375
+
+	PUNTO FINAL
+
+	p{
+		font-size: 1.125em;      
+		line-height: 1.3333;	1.5 (Scale)/ 1.125= 1.33333
+	}
+	h1{
+		font-size: 3.189em;      
+		line-height: 1.3333;    
+	}
+	h2{
+		font-size: 2.126em;    
+		line-height: 1.3333;      
+	}
+
+	h3{
+		font-size: 1.6875em;	1.5 x 1.125=1.6875em
+		line-height: 1.07;	1.5/1.6875 = 0.889 (DEMASIADO PEQUEÑO)
+								Incrementamos en 1/2 de Scale
+								2.25/1.6875 = 1.3333 (DEMASIADO GRANDE)
+								Incrementamos en 1/4 de Scale
+								2/1.875 = 1.07  (OK!)
+
+	}
+	h4{
+		font-size:: 1.125em;		1.5x0.75=1.125em
+		line-height: 1.3333;		1.5/1.125=1.3333
+	}
+
+	MODIFICAMOS LOS VALORES ANTERIORES POR LOS NUEVOS
+
+	*/
+
+@media screen and (max-width: 45em)
+	body,html
+		font-size: 95%
+	
+	.inline-border
+		margin-top: 50px
+		&:after, &:before
+			display: none
+	

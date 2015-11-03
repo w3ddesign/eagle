@@ -1,0 +1,99 @@
+.contact
+	position: relative
+
+.contact-data
+	display: flex
+	max-width: $guide
+	margin: 0 auto
+	margin-top: 100px
+	padding-right: 50px
+	justify-content: center
+	align-items: center
+	+position(relative, 0 0 0 0)
+	
+	.phone
+		z-index: -1
+
+	#contactUs
+		display: flex
+		flex-direction: column
+		max-width: 600px
+		margin: 0 50px
+		text-align: left
+		flex-grow: 1
+		
+		p
+			font-size: 1.5em
+	
+		.personalData
+			margin: 20px 0
+	
+			input
+				box-sizing: border-box
+				width: 202.5px
+				
+		input, textarea
+			border: 2px solid $black
+			padding: 8px
+		
+		textarea
+			height: 100px
+		
+		input[type="submit"]
+			border: none
+			margin: 20px 0
+			background: $bright-yellow
+			color: $black
+			width: 160px
+			margin-left: 250px
+			transition: all 0.35s ease-in-out
+	
+			&:hover
+				background: $black
+				color: white
+	
+
+	::-webkit-input-placeholder
+		color: $dark-blue
+		font-size: 14px
+
+	:-moz-placeholder
+		color: $dark-blue
+		font-size: 14px
+
+	:-ms-input-placeholder
+		color: $dark-blue
+		font-size: 14px
+
+	::-moz-placeholder
+		color: $dark-blue
+		font-size: 14px
+
+
+@media screen and (min-width: 30em) and (max-width: 60em)
+	
+	.contact-data
+		flex-direction: column
+		padding-right: 0
+	
+
+@media screen and (max-width: 30em)
+	
+	.contact-data
+		flex-direction: column
+		padding-right: 0
+		margin-top: 0
+		
+		#contactUs
+			max-width: 300px
+			margin: 0 30px
+	
+			.personalData
+	
+				input
+					width: 100%
+					margin: 10px 0
+	
+			input[type="submit"]
+				margin-left: 0
+	

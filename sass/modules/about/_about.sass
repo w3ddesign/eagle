@@ -1,0 +1,46 @@
+.about
+	max-width: $guide
+	width: 90%
+	margin: 0 auto
+
+	.window
+		width: 640px
+		height: 640px
+		margin: 100px auto
+		border-radius: 50%
+
+		background:
+			image: url(../images/me.jpg)
+			repeat: no-repeat
+			position: top center
+			attachment: fixed
+	
+	.line-blue
+		display: block
+		width: 75px
+		height: 2px
+		margin: 50px auto
+		background: $dark-blue
+	
+	p
+		max-width: 750px
+		margin: 0 auto
+	
+@media screen and (min-width: 37.5em) and (max-width: 47em)
+	.about
+		.window
+			width: 500px
+			height: 500px
+	
+	
+@media screen and (min-width: 25em) and (max-width: 37.5em)
+	.about
+		.window
+			width: 350px
+			height: 350px
+	
+@media screen and (max-width: 25em)
+	.about
+		.window
+			width: 280px
+			height: 280px

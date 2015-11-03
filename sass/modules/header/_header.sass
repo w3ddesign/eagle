@@ -1,0 +1,148 @@
+header
+	display: inline-block
+	width: 100%
+	height: 100vh
+	background-color: $black
+	position: relative
+	overflow: hidden
+
+	img
+		width: 100%
+		height: auto
+		text-align: center
+
+
+
+.main-nav
+	width: 100%
+	position: fixed
+	z-index: 9999 !important
+	background: $black
+
+	&.collapse
+		box-shadow: 0px 0px 25px -5px #333
+		font-size: 95%
+
+	&.collapse ul li:nth-child(3) svg
+		width: 45px
+		height: 45px
+	
+	&.collapse ul li
+		align-self: flex-end
+		padding-bottom: 5px
+
+	.menu-toggle
+		+position(fixed, 1% 2% null null)
+		display: none
+		cursor: pointer
+
+	ul
+		display: flex
+		justify-content: center
+		align-items: center
+		text-transform: uppercase
+		
+		li
+			color: white
+			margin: 5px 65px
+	
+			.underline
+				color: white
+				transition: all 0.3s ease
+				display: block
+				position: relative
+				text-decoration: none
+				overflow: hidden
+				padding-bottom: 12px
+				font-size: 0.9em
+		
+				&:hover:after, &:focus:after, &:active:after
+					width: 100%
+		
+				&:after
+					content: ''
+					position: absolute
+					bottom: 0
+					left: 50%
+					width: 0%
+					transform: translateX(-50%)
+					height: 2px
+					background: $bright-yellow
+					transition: 0.35s
+		
+				&:hover
+					color: $bright-yellow
+		
+		
+		.eagle
+			path
+				transition: 0.35s ease
+				&:hover
+					fill: $bright-yellow
+		
+.welcome-box
+	display: flex
+	justify-content: center
+	align-items: center
+	position: absolute
+	bottom: 0
+
+	.welcome
+		align-self: flex-start
+		margin-left: 100px
+		position: relative
+		bottom: 100px
+		max-width: 675px
+	
+	.eagle-box
+		flex-grow: 1
+		img
+			display: block
+	
+	
+@media screen and (max-width: 60em)
+	
+	.welcome-box
+		display: flex
+		flex-direction: column
+	
+		.welcome
+			margin-left: 0
+			padding: 50px
+			bottom: 0
+
+	.main-nav
+		.menu-toggle
+			display: block
+			z-index: 9999 !important
+
+		ul
+			flex-wrap: wrap
+			flex-direction: column
+			position: relative
+			bottom: 250px
+			transition: all 0.45s ease-in-out
+			height: 60px
+			
+			&.open
+				position: relative
+				bottom: -40px
+				height: 240px
+	
+			li
+				margin: 5px 35px
+				align-self: center !important
+		
+				&:nth-child(3)
+					+position(absolute, -40px 0 0 0)
+					text-align: center
+					height: 50px
+					width: 75px
+					margin: 0 auto
+		
+@media screen and (max-width: 21em)
+	
+	.welcome-box
+		.welcome
+			bottom: 0
+	

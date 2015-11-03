@@ -1,0 +1,30 @@
+.skill-container
+	display: flex
+	justify-content: center
+	align-items: center
+	max-width: $guide
+	margin: 0 auto
+	width: 90%
+	flex-wrap: wrap
+
+	.skill-item
+		width: 200px
+		margin: 15px 5px
+		color: $dark-blue
+		transform: translateX(30px)
+		transition: all 0.4s ease-in-out
+		overflow: hidden
+		opacity: 0
+	
+		&.is-showing
+			opacity: 1
+			transform: translateX(0px)
+
+	
+		figure
+			margin: 50px 0
+			padding: 0
+			text-align: center
+	
+			figcaption
+				margin: 20px 0

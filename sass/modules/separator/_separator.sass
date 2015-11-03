@@ -1,0 +1,36 @@
+.separator
+	background: $black
+
+	.call
+		color: white
+		margin: 0 auto
+		max-width: $guide
+		padding: 15px 0
+		display: flex
+		justify-content: center
+		align-items: center
+	
+		span
+			margin: 0 25px
+			transition: all 0.35s ease-in-out
+			
+			#Circle, #Arrow
+				transition: all 0.35s ease-in-out
+			&:hover #Circle
+				stroke: $bright-yellow
+		
+			&:hover #Arrow
+				stroke: $bright-yellow
+				transform: translateX(5px)
+		
+@media screen and (min-width: 30em) and (max-width: 40em)
+	
+	.separator
+		.call
+			font-size: 1.2em
+	
+
+@media screen and (max-width: 30em)
+	.separator
+		display: none
+
